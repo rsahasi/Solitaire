@@ -1,0 +1,61 @@
+#BlueJ class context
+comment0.target=Solitaire
+comment0.text=\n\ This\ class\ enables\ one\ to\ use\ the\ card\ class\ and\ actually\ play\ the\ game.Solitaire\ is\ played\ as\ follows\:\n\ There's\ a\ stock\ pile\ which\ one\ can\ take\ cards\ from,\ which\ are\ placed\ in\ an\ area\ known\ as\ the\ waste\ pile.\n\ Under\ that,\ there\ are\ six\ spots\ for\ cards\ to\ be\ placed,\ and\ the\ user\ moves\ individual\ cards\ from\ \n\ the\ waste\ pile\ onto\ a\ game\ pile.\ One\ can\ move\ cards\ from\ pile\ to\ pile\ only\ if\ they\ are\ of\ one\ less\ rank,\ and\ the\ \n\ opposite\ color\ as\ well.\ The\ goal\ of\ the\ game\ is\ to\ move\ all\ the\ cards\ in\ a\ deck\ onto\ the\ foundations\ (located\ in\ the\n\ top\ right),\ in\ ascending\ order\ of\ rank,\ all\ from\ the\ same\ exact\ suit.\ This\ program\ enables\ users\ to\ have\ a\ great,\ \n\ no-money-losing\ game\ experience\!\n\ @author\ Ruhan\ Sahasi\n\ @version\ 11/15/22\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment1.text=\n\ This\ is\ the\ main\ method,\ and\ when\ it\ runs,\ it\ creates\ a\ new\ game\ of\ Solitaire.\n
+comment10.params=
+comment10.target=void\ resetStock()
+comment10.text=\n\ This\ method\ resets\ the\ stock\ pile\ by\ getting\ cards\ from\ the\ waste\ pile.\ \n\ @postcondition\ the\ stock\ is\ reset\ with\ cards\n
+comment11.params=
+comment11.target=void\ stockClicked()
+comment11.text=\n\ This\ method\ utilizes\ the\ Solitaire\ display\ class\ to\ perform\ various\ actions\ when\ the\ stock\ is\ clicked\ on,\ \n\ depending\ on\ whether\ or\ not\ it\ is\ empty.\ If\ it\ is\ not\ empty,\ you\ deal\ 3\ cards,\ else\ you\ reset\ your\ stock.\n\ @postcondition\ three\ cards\ are\ dealed\ onto\ individual\ and\ different\ piles,\ or\ the\ stock\ is\ reset\n
+comment12.params=
+comment12.target=void\ wasteClicked()
+comment12.text=\n\ This\ method\ utilizes\ the\ Solitaire\ display\ class\ to\ perform\ various\ actions\ when\ the\ waste\ is\ clicked\ on.\ If\ the\n\ waste\ isn't\ empty\ among\ other\ conditions,\ you\ select\ it,\ otherwise\ you\ deselect\ it.\n\ @postcondition\ the\ waste\ pile\ is\ either\ selected\ (highlighted\ yellow)\ or\ unselected\n
+comment13.params=index
+comment13.target=void\ foundationClicked(int)
+comment13.text=\n\ This\ method\ utilizes\ the\ Solitaire\ display\ class\ to\ perform\ various\ actions\ when\ the\ foundation\ is\ clicked\ on.\n\ @param\ index\ the\ index\ of\ the\ foundation\ pile\ we\ are\ operating\ on\n\ @precondition\ index\ is\ between\ 0\ (inclusive)\ and\ 4\ (exclusive)\n\ @postcondition\ "YOU\ WON\ SOLITAIRE,"\ and/or\ the\ foundation\ with\ it's\ corresponding\ number\ is\ printed\n
+comment14.params=index
+comment14.target=void\ pileClicked(int)
+comment14.text=\n\ This\ method\ utilizes\ the\ Solitaire\ display\ class\ to\ perform\ various\ actions\ when\ the\ piles\ are\ clicked\ on.\n\ @param\ index\ the\ index\ of\ the\ normal\ pile\ we\ are\ operating\ on\n\ @precondition\ index\ is\ between\ 0\ (inclusive)\ and\ 7\ (exclusive)\n\ @postcondition\ a\ variety\ of\ actions\ can\ occur\ depending\ on\ the\ circumstances,\ inclduing\ the\ top\ card\ being\n\ selected,\ deselected,\ and\ the\ pile\ \#\ will\ be\ printed\ to\ the\ terminal\ \n
+comment15.params=
+comment15.target=boolean\ haveWon()
+comment15.text=\n\ This\ method\ determines\ when\ a\ player\ has\ won\ the\ game\n\ @return\ true\ if\ they\ have\ one,\ false\ otherwise\n
+comment16.params=card\ index
+comment16.target=boolean\ canAddToPile(Card,\ int)
+comment16.text=\n\ This\ method\ determines\ if\ one\ can\ add\ a\ card\ (under\ the\ rules)\ to\ a\ given\ pile\n\ @return\ true\ if\ they\ can,\ false\ otherwise\n
+comment17.params=card\ index
+comment17.target=boolean\ canAddToFoundation(Card,\ int)
+comment17.text=\n\ This\ helper\ method\ determines\ whether\ a\ card\ can\ be\ added\ onto\ a\ foundation\ (valid\ under\ the\ rules\ of\ Solitaire)\n\ @param\ card\ the\ card\ we\ are\ testing\n\ @param\ index\ the\ location\ of\ the\ pile\ we\ are\ operating\ on\n\ @precondition\ 0<\=index<4\n\ @postcondition\ It\ is\ determined\ whether\ the\ card\ can\ be\ added\ onto\ the\ foundation\ at\ index\n\ @return\ true\ if\ it\ can\ be,\ else\ false\n
+comment18.params=cards\ index
+comment18.target=void\ addToPile(java.util.Stack,\ int)
+comment18.text=\n\ This\ method\ adds\ cards\ to\ the\ pile\n\ @param\ cards\ A\ stack\ of\ cards\ that\ is\ to\ be\ inserted\ onto\ piles\n\ @param\ index\ the\ location\ of\ the\ pile\ we\ are\ operating\ on\n\ @precondition\ 0<\=index<7\n\ @postcondition\ all\ the\ cards\ in\ the\ cards\ stack\ are\ pushed\ onto\ the\ pile\n
+comment19.params=index
+comment19.target=java.util.Stack\ removeFaceUpCards(int)
+comment19.text=\n\ This\ method\ removes\ the\ face\ up\ cards\ of\ a\ pile.\n\ @param\ index\ the\ location\ of\ the\ pile\ we\ are\ operating\ on\n\ @precondition\ 0<\=index<7\n\ @postcondition\ leaves\ the\ pile\ without\ the\ face\ up\ cards\n\ @return\ cards\ A\ stack\ of\ all\ the\ face\ up\ cards\n
+comment2.params=
+comment2.target=Solitaire()
+comment2.text=\n\ This\ is\ the\ Solitaire\ constructor,\ and\ it\ creates\ 4\ spots\ for\ the\ foundations,\ all\ the\ piles,\ and\ the\ display.\n
+comment3.params=
+comment3.target=Card\ getStockCard()
+comment3.text=\n\ This\ method\ enables\ users\ to\ retrieve\ a\ card\ from\ the\ stock\ pile.\n\ @return\ the\ top\ stock\ card,\ or\ null\ in\ the\ case\ when\ stock\ pile\ is\ empty\n
+comment4.params=
+comment4.target=Card\ getWasteCard()
+comment4.text=\n\ This\ method\ enables\ users\ to\ retrieve\ a\ card\ from\ the\ waste\ pile.\n\ @return\ the\ waste\ pile\ card,\ or\ null\ in\ the\ case\ when\ waste\ pile\ is\ empty\n
+comment5.params=index
+comment5.target=Card\ getFoundationCard(int)
+comment5.text=\n\ This\ method\ enables\ users\ to\ retrieve\ a\ card\ from\ the\ foundation\ pile.\n\ @param\ index\ The\ index\ of\ the\ foundation\ we\ want\n\ @precondition\ index\ is\ a\ valid\ pile\ location\ from\ 0<\=index<4\n\ @postcondition\ returns\ the\ top\ foundation\ card\n\ @return\ the\ top\ foundation\ card,\ or\ null\ in\ the\ case\ when\ foundation\ pile\ is\ empty\ at\ index\ position\n
+comment6.params=index
+comment6.target=java.util.Stack\ getPile(int)
+comment6.text=\n\ This\ method\ enables\ users\ to\ retrieve\ a\ card\ from\ the\ normal\ piles.\n\ @param\ index\ the\ index\ of\ the\ pile\ we\ want\n\ @precondition\ index\ is\ a\ valid\ pile\ location\ from\ 0<\=index<7\n\ @return\ the\ actual\ pile\ at\ index\ (referenced)\n
+comment7.params=
+comment7.target=void\ createStock()
+comment7.text=\n\ This\ method\ creates\ the\ stock\ pile.\n\ @postcondition\ A\ proper,\ shuffled\ stock\ pile\ has\ been\ created\n
+comment8.params=
+comment8.target=void\ deal()
+comment8.text=\n\ This\ method\ enables\ users\ to\ utilize\ the\ stock\ pile\ in\ order\ to\ deal\ cards\ and\ advance\ the\ game,\ and\ it\ also\n\ turns\ over\ the\ top\ pile\ cards.\n\ @postcondition\ the\ stock\ pile\ provides\ cards\ to\ the\ normal\ pile,\ and\ top\ pile\ cards\ are\ turned\ over\n
+comment9.params=
+comment9.target=void\ dealThreeCards()
+comment9.text=\n\ This\ method\ is\ similar\ to\ the\ previous\ one,\ but\ it\ uses\ the\ waste\ pile\ to\ transfer\ cards\ onto\ three\ separate\ \n\ piles.\n\ @postcondition\ three\ cards\ are\ dealed\ onto\ individual\ and\ different\ piles\n
+numComments=20
